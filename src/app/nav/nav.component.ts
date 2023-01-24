@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { SignInService } from '../services/sign-in.service';
 
 @Component({
   selector: 'app-nav',
@@ -7,10 +8,13 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService :SignInService) { }
 
   ngOnInit(): void {
   }
   @Input() title:string=""
 
+ async signOut(){
+ this.authService.logOut(); 
+ } 
 }

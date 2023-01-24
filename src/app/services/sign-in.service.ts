@@ -38,4 +38,9 @@ export class SignInService {
     }   
     })
   }
+
+  async logOut(){
+    this.router.navigate(['']);
+    return this.auth.signOut();
+  }
 }
